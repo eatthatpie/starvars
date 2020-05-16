@@ -1,0 +1,33 @@
+{
+  "name": "starvars",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --hot --open --port 4400",
+    "test": "jest --passWithNoTests",
+    "test-cov": "jest --passWithNoTests --coverage"
+  },
+  "author": "eatthatpie <eatthatpie.dev@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.2",
+    "@types/react": "^16.9.35",
+    "@types/styled-components": "^5.1.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.0.0",
+    "ts-loader": "^7.0.4",
+    "typescript": "^3.9.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
