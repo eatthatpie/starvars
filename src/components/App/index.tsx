@@ -1,6 +1,7 @@
 import React from 'react';
 import DetailsPeople from '@/views/DetailsPeople';
 import Nav from '@/components/Nav';
+import ThemePicker from '@/components/ThemePicker';
 import { useSelector } from 'react-redux';
 import { selectCurrentTheme } from '@/store/selectors';
 import { ThemeProvider } from 'styled-components';
@@ -17,6 +18,9 @@ function App() {
       <GlobalStyle />
       <S.App>
         <Nav />
+        <S.TopRight>
+          <ThemePicker />
+        </S.TopRight>
         <DetailsPeople />
       </S.App>
     </ThemeProvider>

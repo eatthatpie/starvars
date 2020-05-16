@@ -5,7 +5,8 @@ describe(`themes`, function() {
     'bg',
     'bgVariant',
     'default',
-    'primary'
+    'primary',
+    'iconFilter'
   ];
 
   test(`each theme should have desired properties`, function() {

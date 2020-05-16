@@ -5,3 +5,9 @@ export const App = styled.div`
   background-color: ${props => props.theme.bg};
   height: 100%;
 `;
+
+export const TopRight = styled.div`
+  position: fixed;
+  top: 20px;
+  right: 20px;
+`;

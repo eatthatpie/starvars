@@ -7,7 +7,7 @@ export const categories = (state = defaultCategories, action) => {
   }
 }
 
-export const settings = (state = { theme: 'dark' }, action) => {
+export const settings = (state = { theme: 'light' }, action) => {
   switch (action.type) {
     case 'set_theme':
       return {

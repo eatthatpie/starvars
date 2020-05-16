@@ -18,5 +18,5 @@ export const Context = styled.div`
 `;
 
 export const Img = styled.img`
-  filter: invert(1);
+  filter: ${props => props.theme.iconFilter};
 `;
