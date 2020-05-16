@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { positionCover } from '@/styles/mixins';
 
 export const Context = styled.div``;
 
@@ -18,22 +19,14 @@ export const Item = styled.a<any>`
     content: '';
     transition: opacity 0.1s ease-in-out;
     background-color: ${props => props.theme.default};
-    position: absolute;
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    right: -2px;
+    ${positionCover('-2px')};
     border-radius: 50%;
     z-index: -1;
     opacity: 0;
   }
 
   > span {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    ${positionCover()};
     border-radius: 50%;
   }
 

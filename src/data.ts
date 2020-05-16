@@ -17,3 +17,9 @@ export const defaultCategories: Array<ICategory> = [
     linkUrl: '/vehicles'
   }
 ]
+
+export const localStorageData = (w: Window) => ({
+  theme() {
+    return w.localStorage.getItem('theme');
+  }
+});

@@ -1,4 +1,6 @@
-import { defaultCategories } from '@/data';
+import { defaultCategories, localStorageData } from '@/data';
+
+const persistedData = localStorageData(window);
 
 export const categories = (state = defaultCategories, action) => {
   switch (action.type) {
@@ -7,7 +9,7 @@ export const categories = (state = defaultCategories, action) => {
   }
 }
 
-export const settings = (state = { theme: 'light' }, action) => {
+export const settings = (state = { theme: persistedData.theme() || 'light' }, action) => {
   switch (action.type) {
     case 'set_theme':
       return {
