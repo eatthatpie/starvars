@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import { fontFamily, fontSize } from './vars';
 
 const GlobalStyle = createGlobalStyle`
-  html,
   body,
   #root {
     height: 100%;
@@ -43,12 +42,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   header {
-    padding: 1.6rem 0;
+    padding: 1em 0;
     font-size: 1.6rem;
     font-weight: 700;
 
     &.center {
       text-align: center;
+    }
+
+    &.small {
+      font-size: 1rem;
     }
   }
 `

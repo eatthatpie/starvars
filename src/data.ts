@@ -1,4 +1,5 @@
 import ICategory from '@/interfaces/ICategory';
+import ILocalStorageData from '@/interfaces/ILocalStorageData';
 
 export const defaultCategories: Array<ICategory> = [
   {
@@ -18,8 +19,8 @@ export const defaultCategories: Array<ICategory> = [
   }
 ]
 
-export const localStorageData = (w: Window) => ({
-  theme() {
+export const localStorageData = (w: Window): ILocalStorageData => ({
+  theme(): string|null {
     return w.localStorage.getItem('theme');
   }
 });

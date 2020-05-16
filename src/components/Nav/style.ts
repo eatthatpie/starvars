@@ -27,9 +27,9 @@ export const Movable = styled.nav<any>`
 export const Trigger = styled.a`
   cursor: pointer;
   display: inline-block;
-  position: absolute;
-  width: 20px;
-  height: 12px;
+  position: fixed;
+  width: 32px;
+  height: 32px;
   top: 20px;
   left: 20px;
   z-index: ${zNav + 1};
@@ -58,11 +58,11 @@ export const Trigger = styled.a`
     }
 
     &:nth-child(2) {
-      top: 5px;
+      top: 9px;
     }
 
     &:nth-child(3) {
-      top: 10px;
+      top: 18px;
     }
   }
 
@@ -98,7 +98,10 @@ export const Item = styled.li`
 `;
 
 export const Context = styled.div<any>`
-  position: absolute;
+  background-color: ${props => props.theme.bg};
+  position: fixed;
+  height: 60px;
+  width: 100%;
   z-index: ${zNav};
 
   ${props => props.isOpen && `
@@ -109,7 +112,7 @@ export const Context = styled.div<any>`
     ${Trigger} {
       > span {
         &:nth-child(1) {
-          transform: translateY(5px) rotate(45deg);
+          transform: translateY(9px) rotate(45deg);
         }
 
         &:nth-child(2) {
@@ -117,7 +120,7 @@ export const Context = styled.div<any>`
         }
 
         &:nth-child(3) {
-          transform: translateY(-5px) rotate(-45deg);
+          transform: translateY(-9px) rotate(-45deg);
         }
       }
     }

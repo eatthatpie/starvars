@@ -3,8 +3,10 @@ import theme from './theme';
 describe(`themes`, function() {
   const desiredProperties = [
     'bg',
+    'bgIntense',
     'bgVariant',
     'default',
+    'muted',
     'primary',
     'iconFilter'
   ];

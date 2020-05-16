@@ -1,6 +1,8 @@
 import React from 'react';
+import Caption from '@/components/Caption';
 import CategoryIcon from '@/components/CategoryIcon';
 import ProfilePic from '@/components/ProfilePic';
+import { Link, Space } from '@/styles/components';
 import * as S from './styles';
 
 function Details() {
@@ -28,13 +30,23 @@ function Details() {
       </div>
       <div>
         <S.RelativeFlex column>
-          <div>
-            Detail 1
-          </div>
-          <div>
-            Detail 2
-          </div>
+          <Caption label="Species">
+            Gungan
+          </Caption>
+          <Caption label="Planets">
+            <Link>Earth</Link>
+            <Link>Other Planet</Link>
+            <Link>Naboo</Link>
+          </Caption>
+          <Caption label="Vehicles">
+            <Link>Aston Martin</Link>
+            <Link>Ford Mustang</Link>
+          </Caption>
         </S.RelativeFlex>
+        <Space />
+        <Link>
+          &laquo; all Characters
+        </Link>
       </div>
     </S.Context>
   )

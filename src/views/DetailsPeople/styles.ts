@@ -3,7 +3,6 @@ import { wrapper } from '@/styles/mixins';
 
 export const Context = styled.div`
   ${wrapper};
-  height: 100%;
 `;
 
 export const Flex = styled.div`
@@ -12,4 +11,5 @@ export const Flex = styled.div`
   justify-content: center;
   flex-direction: column;
   height: 100%;
+  min-height: 100vh;
 `;

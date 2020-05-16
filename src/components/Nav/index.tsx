@@ -18,7 +18,11 @@ function Item(props): JSX.Element {
   return (
     <S.Item>
       <S.FlexAnchor href={linkUrl}>
-        <CategoryIcon imageUrl={imageUrl} height="40" />
+        <CategoryIcon
+          imageUrl={imageUrl}
+          height="40"
+          isTransparent={true}
+        />
         <div className="mt-10">
           {name}
         </div>
@@ -28,7 +32,7 @@ function Item(props): JSX.Element {
 }
 
 function Nav(): JSX.Element {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const categories = useSelector(selectCategories());
 
   return (

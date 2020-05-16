@@ -1,5 +1,5 @@
 import React from 'react';
-import DetailsPeople from '@/views/DetailsPeople';
+import ListPeople from '@/views/ListPeople';
 import Nav from '@/components/Nav';
 import ThemePicker from '@/components/ThemePicker';
 import { useSelector } from 'react-redux';
@@ -21,7 +21,7 @@ function App() {
         <S.TopRight>
           <ThemePicker />
         </S.TopRight>
-        <DetailsPeople />
+        <ListPeople />
       </S.App>
     </ThemeProvider>
   );
