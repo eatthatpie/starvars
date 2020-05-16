@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectCurrentTheme } from '@/store/selectors';
 import { ThemeProvider } from 'styled-components';
 import * as S from './styles';
+import GlobalStyle from '@/styles/globalStyle';
 import theme from '@/styles/theme';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <ThemeProvider theme={currentThemeObject}>
+      <GlobalStyle />
       <S.App>
         Reload test.
       </S.App>

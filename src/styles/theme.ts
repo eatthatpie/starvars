@@ -1,6 +1,7 @@
 const theme = {
   dark: {
-    bg: '#222'
+    bg: '#222',
+    default: '#fdfdfd'
   }
 };
 

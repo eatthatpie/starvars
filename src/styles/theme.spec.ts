@@ -2,7 +2,8 @@ import theme from './theme';
 
 describe(`themes`, function() {
   const desiredProperties = [
-    'bg'
+    'bg',
+    'default'
   ];
 
   test(`each theme should have desired properties`, function() {
