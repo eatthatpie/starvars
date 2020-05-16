@@ -41,6 +41,16 @@ const GlobalStyle = createGlobalStyle`
       margin: 10px 0;
     }
   }
+
+  header {
+    padding: 1.6rem 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    &.center {
+      text-align: center;
+    }
+  }
 `
 
 export default GlobalStyle;
