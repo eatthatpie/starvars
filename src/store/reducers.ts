@@ -1,3 +1,12 @@
+import { defaultCategories } from '@/data';
+
+export const categories = (state = defaultCategories, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+}
+
 export const settings = (state = { theme: 'dark' }, action) => {
   switch (action.type) {
     case 'set_theme':

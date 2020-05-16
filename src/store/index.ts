@@ -1,8 +1,8 @@
 import { combineReducers, createStore } from 'redux';
-import { settings } from './reducers';
+import { categories, settings } from './reducers';
 
 export default function() {
-  const rootReducer = combineReducers({ settings });
+  const rootReducer = combineReducers({ categories, settings });
 
   return createStore(rootReducer);
 };

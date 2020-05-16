@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from '@/components/Nav';
 import { useSelector } from 'react-redux';
 import { selectCurrentTheme } from '@/store/selectors';
 import { ThemeProvider } from 'styled-components';
@@ -14,6 +15,7 @@ function App() {
     <ThemeProvider theme={currentThemeObject}>
       <GlobalStyle />
       <S.App>
+        <Nav />
         Reload test.
       </S.App>
     </ThemeProvider>

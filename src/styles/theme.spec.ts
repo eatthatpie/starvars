@@ -3,6 +3,7 @@ import theme from './theme';
 describe(`themes`, function() {
   const desiredProperties = [
     'bg',
+    'bgVariant',
     'default'
   ];
 
