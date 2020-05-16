@@ -1,8 +1,11 @@
 import React from 'react';
 import ProfilePic from '@/components/ProfilePic';
+import { RouterLink } from 'best-react-router';
 import * as S from './styles';
 
-function Item() {
+function Item(props) {
+  const { id, name } = props;
+
   return (
     <S.Item>
       <ProfilePic
@@ -11,24 +14,21 @@ function Item() {
         isRounded={true}
       />
       <header className="center small">
-        Luke Skywalker
+        <RouterLink to={{ path: `/people/${id}` }}>
+          {name}
+        </RouterLink>
       </header>
     </S.Item>
   );
 }
 
-function List() {
+function List(props) {
+  const { items } = props;
+
   return (
     <S.Context>
       <S.Grid>
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+        {items.map(item => <Item key={item.id} id={item.id} name={item.name} />)}
       </S.Grid>
     </S.Context>
   )

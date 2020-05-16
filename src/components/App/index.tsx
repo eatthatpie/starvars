@@ -1,10 +1,10 @@
 import React from 'react';
-import ListPeople from '@/views/ListPeople';
 import Nav from '@/components/Nav';
 import ThemePicker from '@/components/ThemePicker';
 import { useSelector } from 'react-redux';
 import { selectCurrentTheme } from '@/store/selectors';
 import { ThemeProvider } from 'styled-components';
+import { RouterView } from 'best-react-router';
 import * as S from './styles';
 import GlobalStyle from '@/styles/globalStyle';
 import theme from '@/styles/theme';
@@ -21,7 +21,7 @@ function App() {
         <S.TopRight>
           <ThemePicker />
         </S.TopRight>
-        <ListPeople />
+        <RouterView />
       </S.App>
     </ThemeProvider>
   );

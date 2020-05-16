@@ -25,8 +25,12 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
         template: path.resolve(__dirname, 'src/index.html'),
-        filename: './index.html'
+        filename: './index.html',
+        base: '/'
     })
   ],
+  devServer: {
+    historyApiFallback: true
+  },
   devtool: '#source-map'
 };

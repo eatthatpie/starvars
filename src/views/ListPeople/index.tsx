@@ -1,9 +1,12 @@
 import React from 'react';
 import CategoryIcon from '@/components/CategoryIcon';
 import List from '@/components/List';
+import { useQuery, queryAllCharacters } from '@/gql';
 import * as S from './styles';
 
 function ListPeople() {
+  const response: any = useQuery(queryAllCharacters);
+
   return (
     <S.Context>
       <S.Caption>
@@ -13,7 +16,8 @@ function ListPeople() {
           isTransparent={true}
         />
       </S.Caption>
-      <List />
+      {response.isLoading && <div>Loading...</div>}
+      {response.data && <List items={response.data.characters} />}
       <S.Button>
         More...
       </S.Button>

@@ -3,9 +3,16 @@ import Caption from '@/components/Caption';
 import CategoryIcon from '@/components/CategoryIcon';
 import ProfilePic from '@/components/ProfilePic';
 import { Link, Space } from '@/styles/components';
+import { useQuery, queryCharacter } from '@/gql';
+import { RouterLink, useCurrentRoute } from 'best-react-router';
 import * as S from './styles';
 
 function Details() {
+  const route = useCurrentRoute();
+  const id = route.params.id;
+
+  const response: any = useQuery(queryCharacter, { id });
+
   return (
     <S.Context>
       <div>
@@ -24,29 +31,48 @@ function Details() {
         </S.RelativeFlex>
         <div>
           <header className="center">
-            Captain Jar Jar Binks
+            {response.data ? response.data.character.name : ''}
           </header>
         </div>
       </div>
       <div>
         <S.RelativeFlex column>
           <Caption label="Species">
-            Gungan
+          {response.data && response.data.character.species.map(item => (
+              <span>
+                {item.name}
+              </span>
+            ))}
+            {response.data && !response.data.character.species.length && (
+              <span>
+                Human
+              </span>
+            )}
           </Caption>
-          <Caption label="Planets">
-            <Link>Earth</Link>
-            <Link>Other Planet</Link>
-            <Link>Naboo</Link>
+          <Caption label="Planet">
+            {response.data && (
+              <Link>
+                {response.data.character.planet.name}
+              </Link>
+            )}
           </Caption>
           <Caption label="Vehicles">
-            <Link>Aston Martin</Link>
-            <Link>Ford Mustang</Link>
+            {response.data && response.data.character.vehicles.map(vehicle => (
+              <Link>
+                {vehicle.name}
+              </Link>
+            ))}
+            {response.data && !response.data.character.vehicles.length && (
+              <div>
+                -
+              </div>
+            )}
           </Caption>
         </S.RelativeFlex>
         <Space />
-        <Link>
+        <RouterLink to={{ path: '/' }}>
           &laquo; all Characters
-        </Link>
+        </RouterLink>
       </div>
     </S.Context>
   )
