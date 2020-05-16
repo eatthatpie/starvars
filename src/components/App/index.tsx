@@ -1,4 +1,5 @@
 import React from 'react';
+import DetailsPeople from '@/views/DetailsPeople';
 import Nav from '@/components/Nav';
 import { useSelector } from 'react-redux';
 import { selectCurrentTheme } from '@/store/selectors';
@@ -16,7 +17,7 @@ function App() {
       <GlobalStyle />
       <S.App>
         <Nav />
-        Reload test.
+        <DetailsPeople />
       </S.App>
     </ThemeProvider>
   );

@@ -4,7 +4,8 @@ describe(`themes`, function() {
   const desiredProperties = [
     'bg',
     'bgVariant',
-    'default'
+    'default',
+    'primary'
   ];
 
   test(`each theme should have desired properties`, function() {
