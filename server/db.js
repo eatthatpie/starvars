@@ -26,6 +26,7 @@ function getCharacters(params) {
     id: () => urlToId(match.url),
     url: () => match.url,
     name: () => match.name,
+    imageUrl: () => match.imageUrl,
     planet: () => getPlanetBy({ url: match.homeworld }),
     species: () => getSpecies({ urls: match.species }),
     vehicles: () => getVehicles({ urls: match.vehicles })
@@ -43,6 +44,7 @@ function getCharacterBy({ url }) {
     id: () => urlToId(match.url),
     url: () => match.url,
     name: () => match.name,
+    imageUrl: () => match.imageUrl,
     planet: () => getPlanetBy({ url: match.homeworld }),
     species: () => getSpecies({ urls: match.species }),
     vehicles: () => getVehicles({ urls: match.vehicles })

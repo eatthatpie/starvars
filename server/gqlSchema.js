@@ -25,6 +25,7 @@ const gqlSchema = `
     id: String
     url: String
     name: String
+    imageUrl: String
     planet: Planet
     species: [Species]
     vehicles: [Vehicle]

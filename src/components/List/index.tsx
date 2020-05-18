@@ -4,12 +4,12 @@ import { RouterLink } from 'best-react-router';
 import * as S from './styles';
 
 function Item(props) {
-  const { id, name, type } = props;
+  const { id, name, imageUrl, type } = props;
 
   return (
     <S.Item>
       <ProfilePic
-        imageUrl="https://zpruszkowa.pl/wp-content/uploads/2019/12/luke-skywalker-790x445.jpg"
+        imageUrl={imageUrl}
         size="180"
         isRounded={true}
       />
@@ -28,7 +28,7 @@ function List(props) {
   return (
     <S.Context>
       <S.Grid>
-        {items.map(item => <Item key={item.id} type={type} id={item.id} name={item.name} />)}
+        {items.map(item => <Item key={item.id} type={type} id={item.id} name={item.name} imageUrl={item.imageUrl} />)}
       </S.Grid>
     </S.Context>
   )

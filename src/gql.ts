@@ -43,6 +43,7 @@ const queryAllCharacters = `
     characters {
       id
       name
+      imageUrl
     }
   }
 `
@@ -60,6 +61,7 @@ const queryCharacter = `
   query queryAllCharacters($id: String!) {
     character(id: $id) {
       name
+      imageUrl
       species {
         name
       }
