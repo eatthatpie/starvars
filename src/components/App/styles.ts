@@ -3,7 +3,7 @@ import { zNav } from '@/styles/vars';
 
 export const App = styled.div`
   color: ${props => props.theme.default};
-  background-color: ${props => props.theme.bg};
+  background: linear-gradient(225deg, ${props => props.theme.bg}, ${props => props.theme.bgVariant});
   height: 100%;
   min-height: 100vh;
 `;

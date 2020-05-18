@@ -8,6 +8,10 @@ function Item(props) {
 
   return (
     <S.Item>
+      <S.Border>
+        <div />
+        <div />
+      </S.Border>
       <ProfilePic
         imageUrl={imageUrl}
         size="180"
