@@ -6,13 +6,11 @@ function ProfilePic(props) {
 
   return (
     <S.Context isRounded={isRounded}>
-      <S.Img size={size}>
-        <img
-          src={imageUrl}
-          alt={alt}
-          height={size}
-        />
-      </S.Img>
+      <S.Img
+        size={size}
+        alt={alt}
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      />
     </S.Context>
   )
 }

@@ -7,6 +7,8 @@ export const Img = styled.div<any>`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: ${props => props.theme.bgVariant};
+  background-size: cover;
 `;
 
 export const Context = styled.div<any>`
