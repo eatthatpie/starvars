@@ -5,17 +5,17 @@ export const defaultCategories: Array<ICategory> = [
   {
     name: 'Characters',
     imageUrl: '/assets/group.svg',
-    linkUrl: '/characters'
+    linkUrl: '/'
   },
   {
     name: 'Planets',
     imageUrl: '/assets/globe.svg',
-    linkUrl: '/planets'
+    linkUrl: '/planet'
   },
   {
     name: 'Vehicles',
     imageUrl: '/assets/rocket.svg',
-    linkUrl: '/vehicles'
+    linkUrl: '/vehicle'
   }
 ]
 

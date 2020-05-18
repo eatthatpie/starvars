@@ -15,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${fontFamily};
     font-size: 100%;
     font-weight: 300;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 
   a {

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = process.env.NODE_ENV === 'local'
+  ? 'http://localhost:5000'
+  : 'https://gqlswapi.site/api'
 
 function useQuery(query, variables?) {
   const [response, setResponse] = useState({ isEmpty: false, isLoading: true, data: null });
@@ -45,6 +47,15 @@ const queryAllCharacters = `
   }
 `
 
+const queryAllPlanets = `
+  query {
+    planets {
+      id
+      name
+    }
+  }
+`
+
 const queryCharacter = `
   query queryAllCharacters($id: String!) {
     character(id: $id) {
@@ -64,4 +75,4 @@ const queryCharacter = `
   }
 `
 
-export { useQuery, queryAllCharacters, queryCharacter }
+export { useQuery, queryAllCharacters, queryAllPlanets, queryCharacter }

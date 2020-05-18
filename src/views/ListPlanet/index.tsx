@@ -1,11 +1,11 @@
 import React from 'react';
 import CategoryIcon from '@/components/CategoryIcon';
 import List from '@/components/List';
-import { useQuery, queryAllCharacters } from '@/gql';
+import { useQuery, queryAllPlanets } from '@/gql';
 import * as S from './styles';
 
 function ListPeople() {
-  const response: any = useQuery(queryAllCharacters);
+  const response: any = useQuery(queryAllPlanets);
 
   return (
     <S.Context>
@@ -17,7 +17,7 @@ function ListPeople() {
         />
       </S.Caption>
       {response.isLoading && <div>Loading...</div>}
-      {response.data && <List type="people" items={response.data.characters} />}
+      {response.data && <List type="planet" items={response.data.planets} />}
       <S.Button>
         More...
       </S.Button>

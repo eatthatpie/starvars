@@ -21,7 +21,25 @@ function App() {
         <S.TopRight>
           <ThemePicker />
         </S.TopRight>
-        <RouterView />
+        <RouterView transition={{
+          duration: 0.3,
+          style: {
+            enterActive: {},
+            enter: {
+              opacity: 0
+            },
+            enterTo: {
+              opacity: 1
+            },
+            leaveActive: {},
+            leave: {
+              opacity: 1
+            },
+            leaveTo: {
+              opacity: 0
+            }
+          }
+        }} />
       </S.App>
     </ThemeProvider>
   );
