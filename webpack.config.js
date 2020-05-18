@@ -1,5 +1,6 @@
 var HtmlWebPackPlugin = require('html-webpack-plugin');
 var path = require('path');
+var { DefinePlugin } = require('webpack');
 
 module.exports = {
   module: {
@@ -27,8 +28,16 @@ module.exports = {
         template: path.resolve(__dirname, 'src/index.html'),
         filename: './index.html',
         base: '/'
+    }),
+    new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   devServer: {
     historyApiFallback: true
   },
