@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
+import ILoadable from '@/interfaces/ILoadable';
 
 const API_URL = process.env.NODE_ENV === 'local'
-  ? 'http://localhost:5000'
+  ? 'http://localhost:4444'
   : 'https://gqlswapi.site/api'
 
-function useQuery(query, variables?) {
-  const [response, setResponse] = useState({ isEmpty: false, isLoading: true, data: null });
+function useQuery(query, variables?): ILoadable {
+  const [response, setResponse] = useState({
+    isEmpty: false,
+    isLoading: true,
+    data: null
+  });
 
   useEffect(() => {
     makeQuery(query, variables)
@@ -53,12 +58,23 @@ const queryAllPlanets = `
     planets {
       id
       name
+      imageUrl
+    }
+  }
+`
+
+const queryAllVehicles = `
+  query {
+    vehicles {
+      id
+      name
+      imageUrl
     }
   }
 `
 
 const queryCharacter = `
-  query queryAllCharacters($id: String!) {
+  query queryCharacter($id: String!) {
     character(id: $id) {
       name
       imageUrl
@@ -77,4 +93,40 @@ const queryCharacter = `
   }
 `
 
-export { useQuery, queryAllCharacters, queryAllPlanets, queryCharacter }
+const queryPlanet = `
+  query queryPlanet($id: String!) {
+    planet(id: $id) {
+      name
+      population
+      imageUrl
+      characters {
+        name
+        id
+      }
+    }
+  }
+`
+
+const queryVehicle = `
+  query queryVehicle($id: String!) {
+    vehicle(id: $id) {
+      name
+      model
+      imageUrl
+      characters {
+        name
+        id
+      }
+    }
+  }
+`
+
+export {
+  useQuery,
+  queryAllCharacters,
+  queryAllPlanets,
+  queryAllVehicles,
+  queryCharacter,
+  queryPlanet,
+  queryVehicle
+}

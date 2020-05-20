@@ -47,6 +47,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 1em 0;
     font-size: 1.6rem;
     font-weight: 700;
+    min-height: 20px;
 
     &.center {
       text-align: center;

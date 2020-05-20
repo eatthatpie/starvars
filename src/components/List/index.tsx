@@ -12,27 +12,36 @@ function Item(props) {
         <div />
         <div />
       </S.Border>
-      <ProfilePic
-        imageUrl={imageUrl}
-        size="180"
-        isRounded={true}
-      />
-      <header className="center small">
-        <RouterLink to={{ path: `/${type}/${id}` }}>
+      <RouterLink to={{ path: `/${type}/${id}` }}>
+        <ProfilePic
+          imageUrl={imageUrl}
+          size="180"
+          isRounded={true}
+        />
+        <header className="center small">
           {name}
-        </RouterLink>
-      </header>
+        </header>
+      </RouterLink>
     </S.Item>
   );
 }
 
 function List(props) {
-  const { items, type } = props;
+  const { items, type, isLoading } = props;
 
   return (
-    <S.Context>
+    <S.Context isLoading={isLoading}>
       <S.Grid>
-        {items.map(item => <Item key={item.id} type={type} id={item.id} name={item.name} imageUrl={item.imageUrl} />)}
+        {isLoading && new Array(8).fill(0).map((item, i) => <Item key={i} />)}
+        {!isLoading && items.map(item => (
+          <Item
+            key={item.id}
+            type={type}
+            id={item.id}
+            name={item.name}
+            imageUrl={item.imageUrl}
+          />
+        ))}
       </S.Grid>
     </S.Context>
   )

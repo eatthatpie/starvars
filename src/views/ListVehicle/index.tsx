@@ -1,15 +1,15 @@
 import React from 'react';
 import CategoryIcon from '@/components/CategoryIcon';
 import List from '@/components/List';
-import { useQuery, queryAllCharacters } from '@/gql';
+import { useQuery, queryAllVehicles } from '@/gql';
 import { useSelector } from 'react-redux';
 import { selectCategoryBySlug } from '@/store/selectors';
 import * as S from './styles';
 
 function ListPeople() {
-  const response: any = useQuery(queryAllCharacters);
+  const response: any = useQuery(queryAllVehicles);
 
-  const category = useSelector(selectCategoryBySlug('characters'));
+  const category = useSelector(selectCategoryBySlug('vehicles'));
 
   return (
     <S.Context>
@@ -22,8 +22,8 @@ function ListPeople() {
       </S.Caption>
       <List
         isLoading={response.isLoading}
-        type="people"
-        items={response.data ? response.data.characters : []}
+        type="vehicle"
+        items={response.data ? response.data.vehicles : []}
       />
     </S.Context>
   );

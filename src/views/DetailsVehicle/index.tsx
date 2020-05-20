@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Details from '@/components/Details';
-import { useQuery, queryPlanet } from '@/gql';
+import { useQuery, queryVehicle } from '@/gql';
 import { RouterLink, useCurrentRoute } from 'best-react-router';
 import { Link } from '@/styles/components';
 import * as S from './styles';
@@ -9,7 +9,7 @@ function DetailsPeople() {
   const route = useCurrentRoute();
   const id = route.params.id;
 
-  const response: any = useQuery(queryPlanet, { id });
+  const response: any = useQuery(queryVehicle, { id });
   
   const [captions, setCaptions]: any = useState([]);
 
@@ -17,10 +17,10 @@ function DetailsPeople() {
     if (response.data) {
       setCaptions([
         {
-          caption: 'Population',
+          caption: 'Model',
           children: (
             <>
-              {response.data.planet.popuplation}
+              {response.data.vehicle.model}
             </>
           )
         },
@@ -28,7 +28,7 @@ function DetailsPeople() {
           caption: 'Characters',
           children: (
             <>
-              {response.data && response.data.planet.characters.map(character => (
+              {response.data && response.data.vehicle.characters.map(character => (
                 <Link>
                   <RouterLink to={{ path: '/people/' + character.id }}>
                     {character.name}
@@ -47,10 +47,10 @@ function DetailsPeople() {
       <S.Flex>
         <Details
           isLoading={response.isLoading}
-          name={response.data ? response.data.planet.name : null}
-          imageUrl={response.data ? response.data.planet.imageUrl : null}
+          name={response.data ? response.data.vehicle.name : null}
+          imageUrl={response.data ? response.data.vehicle.imageUrl : null}
           captions={captions}
-          categorySlug="planets"
+          categorySlug="vehicles"
         />
       </S.Flex>
     </S.Context>

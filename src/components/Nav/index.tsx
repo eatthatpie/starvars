@@ -3,6 +3,8 @@ import CategoryIcon from '@/components/CategoryIcon';
 import { useSelector } from 'react-redux';
 import * as S from './style';
 import { selectCategories } from '@/store/selectors';
+import { RouterLink, useRouteWatcher } from 'best-react-router';
+import { getWindowWidth } from '@/helpers';
 
 function mapCategories(input) {
   return input.map(item => ({
@@ -17,15 +19,17 @@ function Item(props): JSX.Element {
 
   return (
     <S.Item>
-      <S.FlexAnchor href={linkUrl}>
-        <CategoryIcon
-          imageUrl={imageUrl}
-          height="40"
-          isTransparent={true}
-        />
-        <div className="mt-10">
-          {name}
-        </div>
+      <S.FlexAnchor>
+        <RouterLink to={{ path: linkUrl }}>
+          <CategoryIcon
+            imageUrl={imageUrl}
+            height="40"
+            isTransparent={true}
+          />
+          <div className="mt-10">
+            {name}
+          </div>
+        </RouterLink>
       </S.FlexAnchor>
     </S.Item>
   );
@@ -34,6 +38,13 @@ function Item(props): JSX.Element {
 function Nav(): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
   const categories = useSelector(selectCategories());
+
+  // Hide nav on route change if the viewport width is less than 768px.
+  useRouteWatcher(() => {
+    if (getWindowWidth() <= 768) {
+      setIsOpen(false);
+    }
+  })
 
   return (
     <S.Context isOpen={isOpen}>

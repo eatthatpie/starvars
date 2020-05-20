@@ -1,11 +1,50 @@
 import styled from 'styled-components';
 import { positionCover } from '@/styles/mixins';
+import { Img } from '@/components/ProfilePic/styles';
 
-export const Context = styled.div`
+export const Context = styled.div<any>`
+  ${props => props.isLoading && `
+    ${Border} {
+      display: none;
+    }
+
+    ${Item} {
+      header {
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 20px;
+          bottom: 20px;
+          animation: loading 1s 0s linear infinite;
+        }
+      }
+    }
+
+    ${Img} {
+      animation: loading 1s 0s linear infinite;
+      box-shadow: none;
+      border: 0;
+    }
+  `}
+
+  @keyframes loading {
+    0%, 100% {
+      background-color: ${props => props.theme.bgVariant};
+    }
+
+    50% {
+      background-color: transparent;
+    }
+  }
 `;
 
 export const Grid = styled.div`
   display: grid;
+  overflow: hidden;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 30px;
   grid-row-gap: 50px;

@@ -73,18 +73,20 @@ export const Trigger = styled.a`
   }
 `;
 
-export const FlexAnchor = styled.a`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 0;
+export const FlexAnchor = styled.div`
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
 
-  .mt-10 {
-    margin-top: 10px;
-  }
+    .mt-10 {
+      margin-top: 10px;
+    }
 
-  &:hover {
-    background-color: ${props => props.theme.bg};
+    &:hover {
+      background-color: ${props => props.theme.bg};
+    }
   }
 `;
 

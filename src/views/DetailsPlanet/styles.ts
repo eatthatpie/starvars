@@ -12,4 +12,10 @@ export const Flex = styled.div`
   flex-direction: column;
   height: 100%;
   min-height: 100vh;
+
+  @media (max-width: 768px) {
+    display: block;
+    padding-top: 100px;
+    padding-bottom: 20px;
+  }
 `;
