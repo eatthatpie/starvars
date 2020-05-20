@@ -1,0 +1,47 @@
+{
+  "name": "starvars",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "scripts": {
+    "build": "webpack --mode production",
+    "server:dev": "cross-env NODE_ENV=dev nodemon server/index.js",
+    "server:import": "node server/scripts/importer.js",
+    "server:start": "node server/index.js",
+    "start": "webpack-dev-server --mode development --hot --open --port 4400",
+    "start-local": "cross-env NODE_ENV=local webpack-dev-server --mode development --hot --open --port 4400",
+    "test": "jest --passWithNoTests",
+    "test-cov": "jest --passWithNoTests --coverage"
+  },
+  "author": "eatthatpie <eatthatpie.dev@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "best-react-router": "^0.2.2",
+    "copy-webpack-plugin": "^6.0.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.0.0",
+    "node-fetch": "^2.6.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.2",
+    "@types/react": "^16.9.35",
+    "@types/styled-components": "^5.1.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
+    "ts-jest": "^26.0.0",
+    "ts-loader": "^7.0.4",
+    "typescript": "^3.9.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
