@@ -3,6 +3,7 @@ const gqlSchema = `
     id: String
     url: String
     name: String
+    imageUrl: String
     model: String
     characters: [Character]
   }
@@ -17,6 +18,7 @@ const gqlSchema = `
     id: String
     url: String
     name: String
+    imageUrl: String
     characters: [Character]
     population: String
   }

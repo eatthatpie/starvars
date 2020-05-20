@@ -56,6 +56,7 @@ function getPlanets() {
     id: () => urlToId(match.url),
     url: () => match.url,
     name: () => match.name,
+    imageUrl: () => match.imageUrl,
     characters: () => getCharacters({ homeworld: match.url }),
     population: () => match.population
   }));
@@ -72,6 +73,7 @@ function getPlanetBy({ url }) {
     id: () => urlToId(match.url),
     url: () => match.url,
     name: () => match.name,
+    imageUrl: () => match.imageUrl,
     characters: () => getCharacters({ homeworld: url }),
     population: () => match.population
   };
@@ -83,7 +85,8 @@ function getSpecies({ urls }) {
   return matches.map(match => ({
     id: () => urlToId(match.url),
     url: () => match.url,
-    name: () => match.name
+    name: () => match.name,
+    imageUrl: () => match.imageUrl
   }));
 }
 
@@ -98,6 +101,7 @@ function getVehicles(params) {
     id: () => urlToId(match.url),
     url: () => match.url,
     name: () => match.name,
+    imageUrl: () => match.imageUrl,
     model: () => match.model,
     characters: () => getCharacters({ vehicles: [match.url] }),
   }));
@@ -114,9 +118,17 @@ function getVehicleBy({ url }) {
     id: () => urlToId(match.url),
     url: () => match.url,
     name: () => match.name,
+    imageUrl: () => match.imageUrl,
     model: () => match.model,
     characters: () => getCharacters({ vehicles: [match.url] }),
   };
 }
 
-module.exports = { getCharacters, getPlanets, getVehicles, getCharacterBy, getPlanetBy, getVehicleBy };
+module.exports = {
+  getCharacters,
+  getPlanets,
+  getVehicles,
+  getCharacterBy,
+  getPlanetBy,
+  getVehicleBy
+};
